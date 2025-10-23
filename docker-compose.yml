@@ -11,6 +11,16 @@ services:
     networks:
       - demo-net
 
+  app1:
+    build: .
+    container_name: flask_app1
+    ports:
+      # - "80:80"
+      - "5001:5001"
+    restart: always
+    networks:
+      - demo-net
+
 networks:
   demo-net:
     driver: bridge
