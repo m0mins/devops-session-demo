@@ -2,7 +2,8 @@ from flask import Flask, jsonify
 
 app = Flask(__name__)
 
-@app.route('/')
+# @app.route('/home')
+@app.route('/home', methods=['GET'])
 def home():
     return jsonify(message="Welcome to DevOps Session from App One!!")
 

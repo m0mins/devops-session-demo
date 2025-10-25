@@ -18,5 +18,7 @@ RUN pip install -r requirements.txt gunicorn
 
 COPY . .
 
-CMD ["gunicorn", "--bind", "0.0.0.0:5000", "app.main:app"]
+CMD ["sh", "-c", "gunicorn --bind 0.0.0.0:${PORT} app.main:app"]
+
+# CMD ["gunicorn", "--bind", "0.0.0.0:5000", "app.main:app"]
 # CMD ["sh", "-c", "service nginx start && gunicorn --bind 0.0.0.0:5000 app.main:app"]
