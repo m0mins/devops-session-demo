@@ -8,27 +8,8 @@ services:
       # - "80:80"
       - "5000:5000"
     restart: always
-    depends_on:
-      - db_dev
     networks:
       - demo-net
-
-
-  db_dev:
-    image: postgres:13.0-alpine
-    volumes:
-      - ../../demo-db-backups/demo_postgres_data_dev:/var/lib/postgresql/data/
-    networks:
-      - demo-net
-    ports:
-      - 5433:5432
-    env_file:
-      - .env
-    environment:
-      - POSTGRES_USER=${DB_USERNAME}
-      - POSTGRES_PASSWORD=${DB_PASSWORD}
-      - POSTGRES_DB=${DB_NAME}
-
 
 networks:
   demo-net:
