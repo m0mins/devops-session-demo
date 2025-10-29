@@ -22,4 +22,4 @@ COPY . .
 
 # CMD ["gunicorn", "--bind", "0.0.0.0:5000", "app.main:app"]
 # CMD ["sh", "-c", "service nginx start && gunicorn --bind 0.0.0.0:5000 app.main:app"]
-CMD ["sh", "-c", "nginx -g 'daemon off;' & gunicorn --bind 0.0.0.0:5000 app.main:app"]
+CMD ["sh", "-c", "nginx -g 'daemon off;' & gunicorn --bind 0.0.0.0:5001 app.main:app"]
